@@ -13,6 +13,7 @@ import App from '@/App.vue';
 import Loading from '@/Loading.vue';
 import '@/plugins/vuelidate';
 import '@/plugins/cssRules';
+import '@/plugins/extendAxios';
 import store from '@/store/RootStore';
 import i18n from '@/i18n';
 import { postMessage, receiveMessages } from '@/postMessage';
@@ -41,7 +42,7 @@ const mountPoint = '#paysuper-payment-form';
 const isPageInsideIframe = window.location !== window.parent.location;
 
 function getOrderParams({
-  project, token, products, amount, type, currency, sdk, devPreset,
+  project, token, products, amount, type, currency, devPreset,
 }) {
   return {
     project,
@@ -56,7 +57,6 @@ function getOrderParams({
     ...(products ? { products } : {}),
     ...(amount ? { amount: Number(amount), currency } : {}),
     ...(type ? { type } : {}),
-    ...(sdk ? { sdk: true } : {}),
   };
 }
 
@@ -162,7 +162,7 @@ const query = qs.parse(queryString);
 const orderParams = getOrderParams(query);
 const baseOptions = getBaseOptions(query);
 
-if (orderParams.sdk) {
+if (query.sdk) {
   receiveMessages(window, {
     REQUEST_INIT_FORM(data = {}) {
       const { options } = data;
