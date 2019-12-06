@@ -1,12 +1,33 @@
 # PaySuper Payment Form
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/paysuper/paysuper-js-sdk/issues)
 [![Build Status](https://api.travis-ci.org/paysuper/paysuper-payment-form.svg?branch=master)](https://travis-ci.org/paysuper/paysuper-payment-form)
 [![codecov](https://codecov.io/gh/paysuper/paysuper-payment-form/branch/master/graph/badge.svg)](https://codecov.io/gh/paysuper/paysuper-payment-form)
 
-https://github.com/
+##### Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead. 
+
+PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that lets you collect payments with just a few lines of code. Learn more about a [payments flow](https://docs.pay.super.com/docs/payments/quick-start) and [PaySuper Checkout integration](https://docs.pay.super.com/docs/payments/sdk-integration).
+
+![](https://docs.pay.super.com/images/chreckout-form.gif)
+
+|   | PaySuper Service Architecture
+:---: | :---
+✨ | **Checkout integration.** [PaySuper JS SDK](https://github.com/paysuper/paysuper-js-sdk) is designed to integrate a Checkout Form on a merchant's website or a game client.
+💵 | **Frontend for a payment form.** [PaySuper Checkout Form](https://github.com/paysuper/paysuper-payment-form) is a frontend for a sigle-page application with a payment form.
+📊 | **Frontend for a merchant.** [PaySuper Dashboard](https://github.com/paysuper/paysuper-dashboard) is the BFF server and frontend to interact with all PaySuper related features for merchants.
+🔧 | **API Backend.** [PaySuper Management API](https://github.com/paysuper/paysuper-management-api) is a REST API backend for the [PaySuper Dashboard](https://github.com/paysuper/paysuper-management-server) and the [PaySuper Checkout Form](https://github.com/paysuper/paysuper-payment-form). Public API methods are documented in the [API Reference](https://docs.pay.super.com/api).
+💳 | **Payment processing.** [Billing Server](https://github.com/paysuper/paysuper-billing-server) is a micro-service that provides with any payment processing business logic.
+
+***
+
+## Features
+
+## Demo
+
+Try out [the payment sample](https://dashboard.pay.super.com/form-demo) for a [Simple Checkout](https://docs.pay.super.com/docs/payments/#simple-checkout) and a [Products Checkout](https://docs.pay.super.com/docs/payments/#products-checkout).
 
 ## Usage
+Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead.
 
 ### Development
 The package requires `paysuper-dashboard` backend to be served first (`yarn serve:be` to run).
