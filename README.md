@@ -21,9 +21,12 @@ PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that 
 ***
 
 ## Features
+* Supports page view and modal view
+* Adaptive, cross-browser, mobile friendly
+* Designed to loads near instantly on all devices and in all browsers
+* Natively multilingual with RTL-langiuages support
 
 ## Demo
-
 Try out [the payment sample](https://dashboard.pay.super.com/form-demo) for a [Simple Checkout](https://docs.pay.super.com/docs/payments/#simple-checkout) and a [Products Checkout](https://docs.pay.super.com/docs/payments/#products-checkout).
 
 ## Usage
@@ -86,16 +89,6 @@ yarn test
 yarn test:dev
 ```
 
-
-## Contributing
-We feel that a welcoming community is important and we ask that you follow PaySuper's [Open Source Code of Conduct](https://github.com/paysuper/code-of-conduct/blob/master/README.md) in all interactions with the community.
-
-PaySuper welcomes contributions from anyone and everyone. Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
-
-The master branch of this repository contains the latest stable release of this component.
-
- 
-
 ### Screenshot testing hint
 https://static.protocol.one/paysuper/form/dev/tests/base-button-spec-js-base-button-vue-should-render-content-1-diff.png
 
@@ -103,3 +96,16 @@ Inside `.travis.yml`
 `#- set -e` 
 vs
 `- rclone copy tests/unit/__image_snapshots__/__diff_output__/ :s3://paysuper/form/dev/tests --s3-access-key-id=$S3_ACCESS_KEY --s3-secret-access-key=$S3_SECRET_KEY --s3-endpoint=$S3_HOST`
+
+
+
+## Contributing, Feature Requests and Support
+If you have an idea of how to improve Ptah or have general feedback, you're welcome to submit a [feature request](../../issues/new?assignees=&labels=&template=feature_request.md&title=).
+
+Chances are, you like what we have already but you may require a custom integration, a special license or something else big and specific to your needs. We're generally open to such conversations.
+
+If you have a question and can't find the answer yourself, you can [raise an issue](../../issues/new?assignees=&labels=&template=support-request.md&title=I+have+a+question+about+%3Cthis+and+that%3E+%5BSupport%5D) and describe what exactly you're trying to do. We'll do our best to reply in a meaningful time.
+
+We feel that a welcoming community is important and we ask that you follow PaySuper's [Open Source Code of Conduct](CODE-OF-CONDUCT.md) in all interactions with the community.
+
+PaySuper welcomes contributions from anyone and everyone. Please refer to [our contribution guide to learn more](CONTRIBUTING.md).
