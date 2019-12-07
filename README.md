@@ -100,7 +100,9 @@ vs
 
 
 ## Contributing, Feature Requests and Support
-If you have an idea of how to improve Ptah or have general feedback, you're welcome to submit a [feature request](../../issues/new?assignees=&labels=&template=feature_request.md&title=).
+If you like this project then you can put a ⭐️ on it. It means a lot to us.
+
+If you have an idea of how to improve PaySuper (or any of the product parts) or have general feedback, you're welcome to submit a [feature request](../../issues/new?assignees=&labels=&template=feature_request.md&title=).
 
 Chances are, you like what we have already but you may require a custom integration, a special license or something else big and specific to your needs. We're generally open to such conversations.
 
