@@ -1,14 +1,15 @@
 # PaySuper Payment Form
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/paysuper/paysuper-js-sdk/issues)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/paysuper/paysuper-js-sdk/issues)
 [![Build Status](https://api.travis-ci.org/paysuper/paysuper-payment-form.svg?branch=master)](https://travis-ci.org/paysuper/paysuper-payment-form)
 [![codecov](https://codecov.io/gh/paysuper/paysuper-payment-form/branch/master/graph/badge.svg)](https://codecov.io/gh/paysuper/paysuper-payment-form)
 
 ##### Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead. 
 
-PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that lets you collect payments with just a few lines of code. Learn more about a [payments flow](https://docs.pay.super.com/docs/payments/quick-start) and [PaySuper Checkout integration](https://docs.pay.super.com/docs/payments/sdk-integration).
-
 ![](https://docs.pay.super.com/images/chreckout-form.gif)
+
+PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that lets you collect payments with just a few lines of code. Learn more about a [payments flow](https://docs.pay.super.com/docs/payments/quick-start) and [PaySuper Checkout integration](https://docs.pay.super.com/docs/payments/sdk-integration).
 
 |   | PaySuper Service Architecture
 :---: | :---
@@ -21,70 +22,114 @@ PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that 
 ***
 
 ## Features
-* Supports page view and modal view
-* Adaptive, cross-browser, mobile friendly
-* Designed to loads near instantly on all devices and in all browsers
-* Natively multilingual with RTL-langiuages support
+
+**Conversion-optimized:** The payment form loads instantly with a single-page layout.
+**Payment methods:** VISA, Master Card, AMEX, JCB, China UnionPay, Bitcoin payments, Alipay, QIWI, Bank Wire Transfers.
+**Payment types:** Simple Checkout, Items Checkout.
+**Authentication:** Dynamic 3D Secure (ready for Strong Customer Authentication).
+**Localization:** Localized for [24 languages](https://docs.pay.super.com/docs/payments/localization).
+
+## Table of Contents
+
+- [Demo](#demo)
+- [Usage](#usage)
+- [Developing](#developing)
+    - [Branches](#branches)
+    - [Versioning](#versioning)
+    - [Building](#building)
+    - [Production](#production)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Demo
+
 Try out [the payment sample](https://dashboard.pay.super.com/form-demo) for a [Simple Checkout](https://docs.pay.super.com/docs/payments/#simple-checkout) and a [Products Checkout](https://docs.pay.super.com/docs/payments/#products-checkout).
 
 ## Usage
-Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead.
 
-### Development
-The package requires `paysuper-dashboard` backend to be served first (`yarn serve:be` to run).
-The form itself runs on `http://localhost:4040/` where you will be redirected to 
-`http://localhost:8080/order` page. It's provided by `paysuper-dashboard` backend
+Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead. PaySuper JS SDK is designed to integrate a [PaySuper Payment Form](https://github.com/paysuper/paysuper-payment-form) on your website or a game client.
+
+## Developing
+
+The package requires [Paysuper Dashboard](https://github.com/paysuper/paysuper-management-api) backend to be served first:
+
+```bash
+yarn serve:be
+```
+
+The form runs on `http://localhost:4040/` where you will be redirected to 
+`http://localhost:8080/order` page. It's provided by [Paysuper Dashboard](https://github.com/paysuper/paysuper-management-api) backend.
 
 #### Modal view
-Add `modal=true` into request url to run the form in modal view mode:
-`http://localhost:8080/order?modal=true`
+
+Add `modal=true` as a query parameter in the request URL to run the form in a modal view mode:
+
+```http
+http://localhost:8080/order?modal=true
+```
 
 #### Dev data preset
-Add `devPreset=1` into request url to use default development data preset 
-(project + products combination): `http://localhost:8080/order?devPreset=1`
+
+Add `devPreset=1` as a query parameter in the request URL to use a default development data preset (project + products combination): 
+
+```http
+http://localhost:8080/order?devPreset=1
+```
+
+### Branches
+
+We use the [GitFlow](https://nvie.com/posts/a-successful-git-branching-model) as a branching model for Git.
+
+## Versioning
+
+#### Dev version
+`https://cdn.pay.super.com/payform/dev/paysuper-form.js` updates automatically by the `develop` branch updates.
+
+#### Production release
+`https://cdn.pay.super.com/payform/latest/paysuper-form.js` is a release version. 
+
+`https://cdn.pay.super.com/payform/v0.23.2/paysuper-form.js` updates with an actual version release by a tag starts with `v*` that is pushed into the repository.
+
+### Building
+
+#### Compiles and hot-reloads for development
+
+```bash
+yarn serve
+```
+
+#### Compiles and minifies into single js-file
+
+```bash
+yarn build
+```
+
+####Like `run build` but with dist file size analysis
+
+```bash
+yarn check-size
+```
 
 ### Production
-Define mounting place with id `paysuper-payment-form` and attach the form script library
+
+Define a mounting place by id attribute `"id = paysuper-payment-form"` and attach the form script library:
+
 ```html
 <div id="paysuper-payment-form"></div>
 <script src="https://cdn.pay.super.com/payform/latest/paysuper-form.js"></script>
 ```
 
-### Library URLs
-#### Dev version
-https://cdn.pay.super.com/payform/dev/paysuper-form.js
-Updates automatically when `develop` branch updates
-
-#### Production release
-https://cdn.pay.super.com/payform/latest/paysuper-form.js
-https://cdn.pay.super.com/payform/v0.22.0/paysuper-form.js
-Updates with actual version release (`v*` tag pushed into repo)
-
-## Development
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies into single js-file
-```
-yarn build
-```
-
-### Like `run build` but with dist file size analysis
-```
-yarn check-size
-```
+## Testing
 
 ### Run tests
+
 ```
 yarn test
 ```
 
-### Run tests for development in watch mode 
+### Run tests for development in a watch mode
+
 ```
 yarn test:dev
 ```
@@ -93,11 +138,15 @@ yarn test:dev
 https://static.protocol.one/paysuper/form/dev/tests/base-button-spec-js-base-button-vue-should-render-content-1-diff.png
 
 Inside `.travis.yml`
-`#- set -e` 
+```
+#- set -e
+```
+
 vs
-`- rclone copy tests/unit/__image_snapshots__/__diff_output__/ :s3://paysuper/form/dev/tests --s3-access-key-id=$S3_ACCESS_KEY --s3-secret-access-key=$S3_SECRET_KEY --s3-endpoint=$S3_HOST`
 
-
+```
+- rclone copy tests/unit/__image_snapshots__/__diff_output__/ :s3://paysuper/form/dev/tests --s3-access-key-id=$S3_ACCESS_KEY --s3-secret-access-key=$S3_SECRET_KEY --s3-endpoint=$S3_HOST
+```
 
 ## Contributing, Feature Requests and Support
 If you like this project then you can put a ⭐️ on it. It means a lot to us.
@@ -111,3 +160,7 @@ If you have a question and can't find the answer yourself, you can [raise an iss
 We feel that a welcoming community is important and we ask that you follow PaySuper's [Open Source Code of Conduct](https://github.com/paysuper/code-of-conduct/blob/master/README.md) in all interactions with the community.
 
 PaySuper welcomes contributions from anyone and everyone. Please refer to [our contribution guide to learn more](CONTRIBUTING.md).
+
+## License
+
+The project is available as open source under the terms of the [GPL v3 License](https://www.gnu.org/licenses/gpl-3.0).
