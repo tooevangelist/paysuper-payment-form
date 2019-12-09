@@ -7,7 +7,9 @@
 
 ##### Do not use this module directly, use [paysuper-js-sdk](https://github.com/paysuper/paysuper-js-sdk) instead. 
 
-![](https://docs.pay.super.com/images/chreckout-form.gif)
+<p align="center">
+<a href="https://pay.super.com/" target="_blank"><img align="center" width="640" height="510" src="https://docs.pay.super.com/images/chreckout-form.gif"></a>
+</p>
 
 PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that lets you collect payments with just a few lines of code. Learn more about a [payments flow](https://docs.pay.super.com/docs/payments/quick-start) and [PaySuper Checkout integration](https://docs.pay.super.com/docs/payments/sdk-integration).
 
@@ -23,11 +25,11 @@ PaySuper payment form is a PaySuper-hosted mobile browsers-friendly widget that 
 
 ## Features
 
-**Conversion-optimized:** The payment form loads instantly with a single-page layout.
-**Payment methods:** VISA, Master Card, AMEX, JCB, China UnionPay, Bitcoin payments, Alipay, QIWI, Bank Wire Transfers.
-**Payment types:** Simple Checkout, Items Checkout.
-**Authentication:** Dynamic 3D Secure (ready for Strong Customer Authentication).
-**Localization:** Localized for [24 languages](https://docs.pay.super.com/docs/payments/localization).
+* **Conversion-optimized:** The payment form loads instantly with a single-page layout.
+* **Payment methods:** VISA, Master Card, AMEX, JCB, China UnionPay, Bitcoin payments, Alipay, QIWI, Bank Wire Transfers.
+* **Payment types:** Simple Checkout, Items Checkout.
+* **Authentication:** Dynamic 3D Secure (ready for Strong Customer Authentication).
+* **Localization:** Localized for [24 languages](https://docs.pay.super.com/docs/payments/localization).
 
 ## Table of Contents
 
